@@ -1,0 +1,42 @@
+Signal Testing Readme
+
+Links:
+
+RTL-SDR information: 
+https://www.rtl-sdr.com/about-rtl-sdr/
+
+Airspy SDR Software:
+[https://airspy.com/download/](https://airspy.com/download/)
+
+https://www.sdrpp.org/
+
+Notes on signal testing:
+
+### Frequency Range:
+
+**RTL-SDR Frequency Coverage**: The standard RTL-SDR dongles typically cover a frequency range from about 24 MHz to 1.7 GHz. LTE signals can operate within various frequency bands, many of which fall within the RTL-SDR’s range. Common LTE bands include 700 MHz, 800 MHz, 900 MHz, 1800 MHz, 1900 MHz, and 2600 MHz. As long as the LTE transmission falls within the 24 MHz to 1.7 GHz range, the RTL-SDR dongle should be able to monitor it. If we need to use a frequency outside the RTL-SDR dongle range, there are high-frequency converters available. 
+
+#### Bandwidth Limitation:
+
+The RTL-SDR typically supports a maximum bandwidth of about 2.4 MHz. LTE channels can be 1.4, 3, 5, 10, 15, or 20 MHz wide. This means the RTL-SDR might not be able to capture the entire bandwidth of wider LTE channels in a single sweep, but it can still provide useful information on narrower portions of the spectrum.
+
+## Wireless Signal Testing:
+
+**Spectrum Analyzer:**
+A spectrum analyzer can visually inspect the frequency spectrum and measure the strength of the transmitted signals. Would give accurate details on the frequency, bandwidth, and power levels of the signals.
+
+**GNU Radio Companion (GRC):**
+Utilize GNU Radio Companion, an open-source tool for working with SDRs. I found info on this when doing initial research. We can create flowgraphs to visualize the signal in real-time and measure key parameters like frequency and power. It’s especially useful for complex signal analysis and processing.
+
+**RTL-SDR and GQRX:**
+For a more budget-friendly option, we could use an RTL-SDR dongle ($75) paired with GQRX software. GQRX is a software-defined radio receiver powered by the GNU Radio and allows us to monitor and analyze RF signals. Though not as precise as a spectrum analyzer, it is a good alternative for basic signal monitoring. Plus, the spectrum analyzer would need learning to understand the output. 
+
+**HackRF One and SDR# (SDRSharp):**
+If we had access to a HackRF One, we could use it with SDR# software to monitor the transmitted signals. SDR# is user-friendly and supports a wide range of plugins for analyzing different aspects of RF signals.
+
+**Osmocom FFT:**
+Osmocom FFT is another software tool.. It’s part of the Osmocom project, which supports various SDR platforms, including Ettus devices (like our B-205).
+
+What I think our most effective pathway could be: 
+
+Purchase an RTL-SDR dongle, and use that in conjunction with SDR#. It seems more user friendly than GNU Radio Companion. For software we could also use gqrx - this has some nice looking outputs. But the core item is the RTL-SDR dongle, so the computer can actually hear the wireless output signal.

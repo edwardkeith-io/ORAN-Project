@@ -5,9 +5,18 @@ Links:
 RTL-SDR information: 
 https://www.rtl-sdr.com/about-rtl-sdr/
 
-SDR++ Repo:
-https://github.com/AlexandreRouma/SDRPlusPlus/releases/tag/nightly
+To install SDR++ on Mac:
 
+First make sure you have zstd installed and updated:
+
+```
+
+brew install zstd
+
+```
+
+Then grab the installer from SDR++ Repo:
+https://github.com/AlexandreRouma/SDRPlusPlus/releases/tag/nightly
 
 Notes on signal testing:
 
